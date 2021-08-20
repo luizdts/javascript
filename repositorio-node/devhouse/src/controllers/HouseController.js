@@ -22,6 +22,10 @@ class HouseController{
         const {filename} = req.file;
         const { description, price, location, status } = req.body;
         const { user_id } = req.headers;
+        
+        if(!(await schema.isValid(req.body))){
+            return res.status(400).json({error: "Falha na validação."});
+        }
 
         const house = await House.create({
             user: user_id,
