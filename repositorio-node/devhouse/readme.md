@@ -1,3 +1,3 @@
 Aplicação desenvolvida utilizando Node.JS e Insomnia
 
-- Necessário a instalação de pacotes: yarn, express, mongoose, path e cors
+- Necessário a instalação de pacotes: yarn, nodemon, express, mongoose, path e cors
