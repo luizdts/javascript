@@ -13,8 +13,8 @@ class HouseController{
         return res.json(houses);
     }
     async store(req, res){
-        const schema = Yup.object().shape({
-            description: Yup.string().required(),
+        const schema = Yup.object().shape({ 
+            description: Yup.string().required(), // utilizando a biblioteca Yup para validações de envio de certos parâmetros
             price: Yup.number().required(),
             location: Yup.string().required(),
             status: Yup.boolean().required()
@@ -25,7 +25,7 @@ class HouseController{
         const { user_id } = req.headers;
 
         if(!(await schema.isValid(req.body))){
-            return res.status(400).json({error: "Falha na validação."});
+            return res.status(400).json({error: "Falha na validação."}); // erro de validação, normalmente não foi recebido o valor no front-end, repassamos o erro como bad request.
         }
         
         const house = await House.create({
@@ -42,7 +42,7 @@ class HouseController{
 
     async update(req,res){
         const schema = Yup.object().shape({
-            description: Yup.string().required(),
+            description: Yup.string().required(), // utilizando a biblioteca Yup para validações de envio de certos parâmetros
             price: Yup.number().required(),
             location: Yup.string().required(),
             status: Yup.boolean().required()
@@ -55,7 +55,7 @@ class HouseController{
 
         
         if(!(await schema.isValid(req.body))){
-            return res.status(400).json({error: "Falha na validação."});
+            return res.status(400).json({error: "Falha na validação."}); // erro de validação, normalmente não foi recebido o valor no front-end, repassamos o erro como bad request.
         }
         
         const user = await User.findById(user_id);
