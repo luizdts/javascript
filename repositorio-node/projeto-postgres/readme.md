@@ -1,4 +1,4 @@
-Projeto utilizando Node.js e Postgres
+Projeto Tasklist utilizando Node.js e Postgres
 
 Ferramentas utilizadas:
   - Node.js
