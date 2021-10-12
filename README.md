@@ -1,3 +1,3 @@
 # Javascript
 
-Repositório para dados em JS
+Repositório para dados em JS.
